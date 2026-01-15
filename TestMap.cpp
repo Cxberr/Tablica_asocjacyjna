@@ -1,10 +1,12 @@
-#include "Employee.h"													// Defines class Employee
+#include "Employee.h"
+#include "books.h"
 #include "Map.h"														// Defines template Map<Key, Value>
 #include <iostream>
 
 typedef unsigned int ID; 												// Identification number of employee
 typedef Map<ID, Employee> Database; 									// Database of employees
-
+typedef std::string author;
+typedef Map<std::string, book> library;
 using namespace std;
 
 void addEmployees(Database& database);
@@ -24,6 +26,21 @@ int main() {
 	database = newDatabase;												// Update original database
 
 	cout << "Database after the assignment:" << endl << database << endl;
+
+	cout << endl;
+
+	library newLibrary;
+	newLibrary.add("Harry Potter",book("Harry Potter", "J.K. Rowling", "Fantasy", 300, available));
+	newLibrary.add("Władca Pierścieni",book("Władca Pierścieni", "J.R.R. Tolkien", "Fantasy", 1216, available));
+	newLibrary.add("Zbrodnia i kara",book("Zbrodnia i kara", "Fiodor Dostojewski", "Powieść psychologiczna", 671, available));
+	newLibrary.add("Czysty kod",book("Czysty kod", "Robert C. Martin", "Programowanie", 464, available));
+	cout << "original library: " << newLibrary << endl;
+
+	book* bookPtr = newLibrary.find("Harry Potter");
+	bookPtr->status = rented_out;
+	book* lotrPointer = newLibrary.find("Władca Pierścieni");
+	lotrPointer->status = rented_out;
+	cout << "Modified library: " << newLibrary << endl;
 };
 
 void addEmployees(Database& database) {
