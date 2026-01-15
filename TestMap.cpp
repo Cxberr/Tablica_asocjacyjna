@@ -30,10 +30,10 @@ int main() {
 	cout << endl << endl;;
 
 	library newLibrary;
-	newLibrary.add("Harry Potter",book("Harry Potter", "J.K. Rowling", "Fantasy", 300, available));
-	newLibrary.add("Władca Pierścieni",book("Władca Pierścieni", "J.R.R. Tolkien", "Fantasy", 1216, available));
-	newLibrary.add("Zbrodnia i kara",book("Zbrodnia i kara", "Fiodor Dostojewski", "Powieść psychologiczna", 671, available));
-	newLibrary.add("Czysty kod",book("Czysty kod", "Robert C. Martin", "Programowanie", 464, available));
+	newLibrary.add("Harry Potter",book("Harry Potter", "J.K. Rowling", "Fantasy", "Jan Kowalski", 300, available));
+	newLibrary.add("Władca Pierścieni",book("Władca Pierścieni", "J.R.R. Tolkien", "Fantasy", "Anna Zaradna", 1216, available));
+	newLibrary.add("Zbrodnia i kara",book("Zbrodnia i kara", "Fiodor Dostojewski", "Powieść psychologiczna", "Janusz Góral", 671, available));
+	newLibrary.add("Czysty kod",book("Czysty kod", "Robert C. Martin", "Programowanie","Maciek Dębowski", 464, available));
 	cout << "original library: " << newLibrary << endl;
 
 	book* bookPtr = newLibrary.find("Harry Potter");

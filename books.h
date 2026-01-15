@@ -14,13 +14,15 @@ class book {
     std::string title;
     std::string author;
     std::string category;
+    std::string renter;
     size_t num_of_pages{};
     enum status_t status;
     book() = default;
-    book(const std::string& title, const std::string& author, const std::string& category, size_t num, enum status_t status) {
+    book(const std::string& title, const std::string& author, const std::string& category, const std::string& renter, size_t num, enum status_t status) {
         this->title = title;
         this->author = author;
         this->category = category;
+        this->renter = renter;
         this->num_of_pages = num;
         this->status = status;
     }
@@ -30,7 +32,7 @@ class book {
             os << "Dostępna.";
         }
         if (b.status == rented_out) {
-            os << "Wypożyczona.";
+            os << "Wypożyczona " << "Osoba wypożyczjąca: " << b.renter ;
         }
         os << std::endl;
         return os;
