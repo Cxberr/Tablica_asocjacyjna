@@ -27,10 +27,10 @@ class book {
     friend std::ostream& operator<<(std::ostream& os, const book& b) {
         os << "Tytuł: " << b.title << ", " << "Autor: " <<  b.author << ", " << "Kategoria: " << b.category << ", " <<  "Ilość stron: " << b.num_of_pages << ", " << "Status: ";
         if (b.status == available) {
-            os << "Dostępna";
+            os << "Dostępna.";
         }
         if (b.status == rented_out) {
-            os << "Wypożyczona";
+            os << "Wypożyczona.";
         }
         os << std::endl;
         return os;

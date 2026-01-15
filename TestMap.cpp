@@ -27,7 +27,7 @@ int main() {
 
 	cout << "Database after the assignment:" << endl << database << endl;
 
-	cout << endl;
+	cout << endl << endl;;
 
 	library newLibrary;
 	newLibrary.add("Harry Potter",book("Harry Potter", "J.K. Rowling", "Fantasy", 300, available));
