@@ -18,11 +18,10 @@ class book {
     size_t num_of_pages{};
     enum status_t status;
     book() = default;
-    book(const std::string& title, const std::string& author, const std::string& category, const std::string& renter, size_t num, enum status_t status) {
+    book(const std::string& title, const std::string& author, const std::string& category,size_t num, enum status_t status) {
         this->title = title;
         this->author = author;
         this->category = category;
-        this->renter = renter;
         this->num_of_pages = num;
         this->status = status;
     }
@@ -36,6 +35,18 @@ class book {
         }
         os << std::endl;
         return os;
+    }
+    void rent(const std::string& name) {
+        if (name.empty()) {
+            std::cout << "Nie poprawna nazwa" << '\n';
+            return;
+        }
+        if (this->status == rented_out) {
+            std::cout << "Książka już jest wypożyczona" << '\n';
+            return;
+        }
+        this->status = rented_out;
+        this->renter = name;
     }
 };
 
